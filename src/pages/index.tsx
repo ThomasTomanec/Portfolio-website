@@ -1,11 +1,11 @@
 import React from 'react';
 import { ApolloClient, createHttpLink, InMemoryCache, gql } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import PinnedItem from '../components/PinnedItem';
-import HeroSection from "../components/HeroSection";
-import Navbar from "../components/Navbar";
-import Experiences from "../components/Experiences";
-import Footer from "../components/Footer"
+import PinnedItem from '../../components/PinnedItem';
+import HeroSection from "../../components/HeroSection";
+import Navbar from "../../components/Navbar";
+import Experiences from "../../components/Experiences";
+import Footer from "../../components/Footer"
 
 interface Colors {
   [key: string]: string;
