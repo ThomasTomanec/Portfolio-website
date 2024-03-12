@@ -1,8 +1,8 @@
 // LanguageCircle.tsx
 import React from 'react';
-
+type Colors = string
 interface LanguageCircleProps {
-  language: string;
+  language: any;
   colors: Colors;
 }
 
