@@ -1,27 +1,45 @@
 import Link from "next/link";
 import { MarkGithubIcon, StarIcon, GitBranchIcon } from '@primer/octicons-react';
 
-const LanguageCircle = ({ language, colors }) => {
+interface LanguageCircleProps {
+  language: string;
+  colors: { [key: string]: string };
+}
+
+const LanguageCircle: React.FC<LanguageCircleProps> = ({ language, colors }) => {
   const backgroundColor = colors[language] || "bg-gray-300";
   return <div className={`w-4 h-4 ${backgroundColor} rounded-[100%]`} />;
 };
 
-const colors = {
+const colors: { [key: string]: string } = {
   TypeScript: "bg-blue-500",
   JavaScript: "bg-yellow-500",
   HTML: "bg-red-500",
   Java: "bg-orange-500",
-  Unknown: "bg-gray-300", // Barva pro neznámý jazyk
+  Unknown: "bg-gray-300",
 };
 
-export const Article = ({ project }) => {
+interface ArticleProps {
+  project: {
+    homepage?: string;
+    html_url: string;
+    language: string;
+    created_at: string;
+    stargazers_count: number;
+    forks_count: number;
+    name: string;
+    description: string;
+  };
+}
+
+export const Article: React.FC<ArticleProps> = ({ project }) => {
   const appLink = project.homepage ? project.homepage : project.html_url;
   const languageColor = colors[project.language] || colors.Unknown;
 
   return (
     <article className="p-2 md:p-4 ">
       {appLink && (
-        <Link href={appLink} legacyBehavior>
+        <Link href={appLink} passHref>
           <h2 className="z-20 text-xl font-medium duration-1000 lg:text-2xl text-zinc-200 group-hover:text-white font-display cursor-pointer">
             <span className="font-semibold bg-gradient-to-r from-blue-400 text-blue-300 hover:from-pink-500 hover:to-yellow-500 text-transparent bg-clip-text">
               <div className="flex justify-between gap-2 items-center ">
