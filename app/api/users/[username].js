@@ -1,3 +1,4 @@
+"use server"
 const users = async (req, res) => {
 
 	const { username } = req.query;
