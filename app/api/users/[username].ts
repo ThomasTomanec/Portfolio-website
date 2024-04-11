@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import fetch from 'node-fetch';
+import { Request, Response } from "express";
+import fetch from 'node-fetch'
 
 const users = async (req: Request, res: Response): Promise<void> => {
   const { username } = req.query;
