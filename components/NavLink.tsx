@@ -8,7 +8,7 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ href, title }) => {
   return (
     <Link href={href}>
-      <div className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white">
+      <div className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white transition duration-500 hover:scale-105 justify-center items-center">
         {title}
       </div>
     </Link>

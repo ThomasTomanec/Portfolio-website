@@ -1,13 +1,17 @@
 "use client";
+
 import { CardWrapper } from "./card-wrapper";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { useSearchParams } from "next/navigation";
+
 import { LoginSchema } from "@/schemas";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { FormSuccess } from "../form-success"
 import { FormError } from "../form-error";
+
 import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
 import { Form,
@@ -19,6 +23,11 @@ import { Form,
 } from "../ui/form"
 
 export const LoginForm = () => {
+    const searchParams = useSearchParams();
+    const urlError = searchParams.get("error") === "OAuthAccountNotLinked"
+    ? "Email already in use with different provider!"
+    : "";
+
     const [error, setError] = useState<string | undefined>("")
     const [success, setSuccess] = useState<string | undefined>("")
     const [isPedding, startTransition] = useTransition();
@@ -38,8 +47,9 @@ export const LoginForm = () => {
         startTransition(() => {
             login(values)
             .then((data) => {
-                setError(data.error);
-                setSuccess(data.success);
+                setError(data?.error);
+                // TODO: Add when i add 2FA
+                //setSuccess(data.success);
             })
         });
     }
@@ -88,7 +98,7 @@ export const LoginForm = () => {
                             </FormItem>
                         )}/>
                     </div>
-                    <FormError message={error}/>
+                    <FormError message={error || urlError}/>
                     <FormSuccess message={success}/>
                     <Button
                     disabled={isPedding}

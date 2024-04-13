@@ -49,7 +49,7 @@ export const RegisterForm = () => {
         <CardWrapper
         headerLabel="Create an account"
         backButtonLabel="Already have an account?"
-        backButtonHref="/auth/register"
+        backButtonHref="/auth/login"
         showSocial>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
