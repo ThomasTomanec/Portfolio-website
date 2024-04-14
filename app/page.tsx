@@ -92,7 +92,7 @@ export default async function ProjectsPage({ searchParams: { customUsername } }:
   const chunkSize: number = Math.ceil(sorted.length / 3);
 
   return (
-    <main className="mainSite flex min-h-screen flex-col bg-stone-950 container mx-auto px-24 pt-6">
+    <main className="mainSite flex min-h-screen flex-col bg-neutral-950  mx-auto px-24 pt-6">
       <Navbar />
       <span className="w-full p-0.2 top-4 relative bg-gray-700"></span>
       <div className="components container mx-auto py-4">
@@ -110,9 +110,9 @@ export default async function ProjectsPage({ searchParams: { customUsername } }:
                 {heroes.length ? (
                   <>
                     <div className="w-full h-px bg-zinc-800" />
-                    <div className="grid grid-cols-1 gap-4 mx-auto lg:grid-cols-2 ">
+                    <div className="grid md:grid-cols-1 gap-4 mx-auto lg:grid-cols-2 ">
                       {(heroes[0] || heroes[2]) ? (
-                        <div className="grid grid-cols-1 gap-4">
+                        <div className="grid md:grid-cols-1 gap-4">
                           {[heroes[0], heroes[2]].map((project: Repository | null) => (
                             !project ? null :
                               <div key={project.name} className="w-full h-full">
@@ -124,7 +124,7 @@ export default async function ProjectsPage({ searchParams: { customUsername } }:
                         </div>
                       ) : null}
                       {(heroes[1] || heroes[3]) ? (
-                        <div className="grid grid-cols-1 gap-4">
+                        <div className="grid md:grid-cols-1 gap-4">
                           {[heroes[1], heroes[3]].map((project: Repository | null) => (
                             !project ? null :
                               <div key={project.name} className="w-full h-full">

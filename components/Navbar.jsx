@@ -28,7 +28,7 @@ const navLinks = [
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
-        <nav className="bg-stone-950 bg-opacity-90">
+        <nav className="bg-neutral-950 bg-opacity-90">
             <div className="flex flex-wrap items-center justify-between mx-auto">
                 <Link href={"/"} className="text-3xl text-white font-semibold">Tomanec</Link>
                 <div className="mobile-menu block md:hidden m">

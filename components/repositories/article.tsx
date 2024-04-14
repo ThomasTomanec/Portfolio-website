@@ -40,10 +40,10 @@ export const Article: React.FC<ArticleProps> = ({ project }) => {
     <article className="p-2 md:p-4 ">
       {appLink && (
         <Link href={appLink} passHref>
-          <h2 className="z-20 text-xl font-medium duration-1000 lg:text-2xl text-zinc-200 group-hover:text-white font-display cursor-pointer">
-            <span className="font-semibold bg-gradient-to-r from-blue-400 text-blue-300 hover:from-pink-500 hover:to-yellow-500 text-transparent bg-clip-text">
+          <h2 className="z-20 text-xl font-medium duration-1000 lg:text-2xl text-zinc-200 font-display cursor-pointer">
+            <span className="font-semibold text-white bg-clip-text">
               <div className="flex justify-between gap-2 items-center ">
-                <span className="text-xs duration-1000 text-zinc-200 group-hover:text-white group-hover:border-zinc-200 drop-shadow-orange">
+                <span className="text-xs duration-1000 text-zinc-500 drop-shadow-orange">
                   <time dateTime={new Date(project.created_at).toISOString()} title="Created">
                     {new Date(project.created_at).toISOString().substring(0, 10)}
                   </time>
@@ -66,7 +66,7 @@ export const Article: React.FC<ArticleProps> = ({ project }) => {
                 </span>
               </div>
               {project.name}
-              <p className="z-20 font-medium ml-0.5 text-sm duration-1000 text-white group-hover:text-zinc-200">
+              <p className="z-20 font-medium ml-0.5 text-sm duration-1000 text-zinc-500">
                 {project.description}
               </p>
               <div className="flex justify-between gap-2 items-center float-right mt-2 border-t-2 border-gray-700 border-opacity-50">
