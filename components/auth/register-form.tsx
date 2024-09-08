@@ -63,7 +63,7 @@ export const RegisterForm = () => {
                                 <FormControl>
                                     <Input 
                                     {...field}
-                                    placeholder="John Dear"/>
+                                    placeholder="Tomáš Tomanec"/>
                                 </FormControl>
                                 <div className="text-red-600">
                                 <FormMessage/>
@@ -79,7 +79,7 @@ export const RegisterForm = () => {
                                 <FormControl>
                                     <Input 
                                     {...field}
-                                    placeholder="john.doe@example.com"
+                                    placeholder="tomasttomanec@example.cz"
                                     type="email"/>
                                 </FormControl>
                                 <div className="text-red-600">

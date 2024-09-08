@@ -16,20 +16,20 @@ export const Social = () => {
 
 
     return (
-        <div className="flex items-center w-full gap-x-2">
+        <div className="flex-row items-center w-full gap-x-2 pt-12">
             <Button 
-            className="w-full"
+            className="w-full h-20 m-2"
             size="lg" 
             variant="outline"
             onClick={() => onClick("google")}>
-                <FcGoogle className="h-5 w-5 "/>
+                <FcGoogle className="h-10 w-20 "/>
             </Button>
             <Button 
-            className="w-full"
+            className="w-full h-20 m-2"
             size="lg" 
             variant="outline"
             onClick={() => onClick("github")}>
-                <FaGithub className="h-5 w-5 "/>
+                <FaGithub className="h-10 w-20 "/>
             </Button>
         </div>
     )

@@ -56,7 +56,7 @@ export const LoginForm = () => {
 
     return (
         <CardWrapper
-        headerLabel="Welcome back"
+        headerLabel="Log In"
         backButtonLabel="Dont't have an account?"
         backButtonHref="/auth/register"
         showSocial>
@@ -72,7 +72,7 @@ export const LoginForm = () => {
                                 <FormControl>
                                     <Input 
                                     {...field}
-                                    placeholder="john.doe@example.com"
+                                    placeholder="tomasttomanec@example.cz"
                                     type="email"/>
                                 </FormControl>
                                 <div className="text-red-600">
