@@ -6,7 +6,7 @@ import { useSession, signOut } from "next-auth/react";
 import { logout } from "@/actions/logout"
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { LogoutButton } from "@/components/auth/logout-button";
-import { UserButton } from "@/components/auth/user-button"
+import { UserButton } from "./user-button"
 
 
 export default function Navbar({ sidebarOpen, setSidebarOpen }: any) {
@@ -16,7 +16,8 @@ export default function Navbar({ sidebarOpen, setSidebarOpen }: any) {
   };
   return (
     <nav className="bg-gray-100 bg-opacity-90 lg:p-3 p-2">
-      <div className="flex items-center justify-between lg:flex-row-reverse">
+      <div className="flex items-center justify-between">
+        <div className="flex">
         <button
           className="text-slate-500 hover:text-slate-600 lg:hidden"
           aria-controls="sidebar"
@@ -38,10 +39,16 @@ export default function Navbar({ sidebarOpen, setSidebarOpen }: any) {
             <rect x="4" y="17" width="16" height="2" />
           </svg>
         </button>
+        <h1 className="visible lg:invisible font-semibold text-xl ">DashBoard</h1>
+        </div>
+        
         <div className="mobile-menu block md:hidden m">
         </div>
-        <div className="menu md:block md:w-auto text-white" id="navbar">
+        <div className="flex">
+        <div className="menu md:block md:w-auto text-white invisible lg:visible" id="navbar">
         <UserButton />
+        </div>
+        <LogoutButton />
         </div>
       </div>
     </nav>

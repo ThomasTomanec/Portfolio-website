@@ -17,14 +17,14 @@ import {
 } from "@/components/ui/avatar"
 
 import { useCurrentUser } from "@/hooks/use-current-user";
-import { LogoutButton } from "./logout-button";
+import { LogoutButton } from "@/components/auth/logout-button";
 
 export const UserButton = () => {
     const user = useCurrentUser();
 
     return (
         <div className="flex items-center ">
-            <div className="flex items-center invisible lg:visible">
+            <div className="flex items-center">
                 <Avatar>
                     <AvatarImage src={user?.image || ""} />
                     <AvatarFallback className="bg-sky-500">
@@ -36,7 +36,6 @@ export const UserButton = () => {
                     <p className="text-xs lowercase text-black">{user?.role}</p>
                 </div>
             </div>
-            <LogoutButton />
         </div>
     );
 };
