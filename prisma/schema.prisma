@@ -63,3 +63,10 @@ model passwordResetToken {
 
   @@unique([email, token])
 }
+
+model Post {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  date      DateTime @default(now())
+}
