@@ -92,14 +92,14 @@ export default async function ProjectsPage({ searchParams: { customUsername } }:
   const chunkSize: number = Math.ceil(sorted.length / 3);
 
   return (
-    <main className="mainSite flex min-h-screen flex-col bg-neutral-950  mx-auto px-4 lg:px:24 pt-6">
+    <main className="mainSite flex min-h-screen flex-col bg-neutral-950  mx-auto px-4 lg:px pt-6">
       <Navbar />
       <span className="w-full p-0.2 top-4 relative bg-gray-700"></span>
-      <div className="components container mx-auto py-4 pt-8">
-        <div className="componentHeroSections col-span-1 ms:py-10 lg:pt-10">
+      <div className="components container mx-auto py-4">
+        <div className="componentHeroSections col-span-1 ms:py-10 lg:pt-10 pt-5">
           <HeroSection />
         </div>
-        <div className="componentExperiences col-span-1 md:py-10 lg:p-xl">
+        <div className="componentExperiences col-span-1 md:py-10 pt-10 lg:p-xl">
           <Experiences />
         </div>
         <div className="componentPinnedItem col-span-1 md:col-span-1 md:py-10 items-center">

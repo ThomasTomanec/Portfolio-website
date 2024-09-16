@@ -35,14 +35,14 @@ const Navbar = () => {
                     {!navbarOpen ? (
                         <button
                             onClick={() => setNavbarOpen(true)}
-                            className="px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+                            className="px-3 py-2 text-white"
                         >
                             <Bars3Icon className="h-5 w-5" />
                         </button>
                     ) : (
                         <button
                             onClick={() => setNavbarOpen(false)}
-                            className=" px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+                            className=" px-3 py-2 text-white"
                         >
                             <XMarkIcon className="h-5 w-5" />
                         </button>
