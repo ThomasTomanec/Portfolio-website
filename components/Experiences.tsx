@@ -12,7 +12,7 @@ const Experiences = () => {
         <section>
             <div className="grid grid-cols-1  text-white 2xl:grid-cols-3 2xl:items-center">
                 <div className="information-text text-center order-1 md:mx-40 2xl:text-2xl 2xl:col-span-2 2xl:mx-0">
-                <blockquote className="citat text-xl pb-0.5 text-transform: capitalize 2xl:text-left">A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.</blockquote>
+                <blockquote className="citat text-lg pb-0.5 text-transform: capitalize 2xl:text-left">A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.</blockquote>
                 <h2 className="text-3xl pb-0.5 font-extrabold 2xl:text-left">Skills & Experience</h2>
                 <p className="text-xl pb-7 2xl:text-left">The main area of expertise is front end development (client side of the web).
                 HTML, CSS, JS, building small and medium web applications with Vue or React, custom plugins, features, animations, and coding interactive layouts.</p>
