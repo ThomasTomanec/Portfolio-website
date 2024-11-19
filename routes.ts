@@ -5,6 +5,7 @@
  */
 export const publicRoutes = [
     "/",
+    "/sluzby",
     "/auth/new-verification"
 ];
 

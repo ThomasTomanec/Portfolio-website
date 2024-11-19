@@ -5,31 +5,36 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
-import { LoginButton } from "@/components/auth/login-button"; // Import LoginButton
+import { LoginButton } from "@/components/auth/login-button";
 
 const navLinks = [
     {
-        title: "Home",
-        path: "#home",
-        key: "home", // Přidáme key pro první položku
+        title: "Domov",
+        path: "/",
+        key: "Domov", 
     },
     {
-        title: "Contact",
-        path: "#contact",
-        key: "contact", // Přidáme key pro druhou položku
+        title: "Kontakt",
+        path: "#Kontakt",
+        key: "Kontakt", 
     },
     {
-        title: "Login", // Přidáme položku pro přihlášení
-        path: "/auth/login", // Předpokládáme cestu pro přihlášení
-        key: "login", // Přidáme key pro třetí položku
+        title: "Služby",
+        path: "/sluzby",
+        key: "Sluzby",
+    },
+    {
+        title: "Login",
+        path: "/auth/login",
+        key: "login", 
     }
 ];
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
-        <nav className="bg-neutral-950 bg-opacity-90">
-            <div className="flex flex-wrap items-center justify-between mx-auto">
+        <nav className="py-5 bg-midnight-gray">
+            <div className="flex container flex-wrap items-center justify-between mx-auto">
                 <Link href={"/"} className="text-3xl text-white font-semibold">Tomanec</Link>
                 <div className="mobile-menu block md:hidden m">
                     {!navbarOpen ? (

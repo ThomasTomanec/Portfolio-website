@@ -5,7 +5,16 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+
     extend: {
+      colors: {
+
+        'midnight-gray': '#222222',
+        'midnight-black': '#161513',
+      },
+      container: {
+        center: true
+      },
       width: {
         '128': '32rem',
       },
@@ -29,6 +38,7 @@ module.exports = {
         },
       },
     },
+  
     plugins: [
       require('@tailwindcss/typography'),
       require('@tailwindcss/aspect-ratio'),

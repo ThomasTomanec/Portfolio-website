@@ -7,6 +7,7 @@ import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import Experiences from "@/components/Experiences";
 import Footer from "@/components/Footer";
+import Services from "@/components/Services";
 
 interface Props {
   searchParams: { customUsername?: string };
@@ -92,9 +93,11 @@ export default async function ProjectsPage({ searchParams: { customUsername } }:
   const chunkSize: number = Math.ceil(sorted.length / 3);
 
   return (
-    <main className="mainSite flex min-h-screen flex-col bg-neutral-950  mx-auto px-4 lg:px pt-6">
-      <Navbar />
-      <span className="w-full p-0.2 top-4 relative bg-gray-700"></span>
+    <body>
+      <header>
+        <Navbar />
+      </header>
+    <main className="mainSite flex min-h-screen flex-col bg-midnight-black">
       <div className="components container mx-auto py-4">
         <div className="componentHeroSections col-span-1 ms:py-10 lg:pt-10 pt-5">
           <HeroSection />
@@ -143,8 +146,12 @@ export default async function ProjectsPage({ searchParams: { customUsername } }:
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     </main>
+    <footer>
+    <Footer />
+    </footer>
+    </body>
+    
   );
 }

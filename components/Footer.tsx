@@ -1,21 +1,41 @@
+import { HiOutlineMail } from "react-icons/hi";
+import { FaInstagram } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+
+
+
 const Footer: React.FC = () => {
-    return (
-      <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
-        <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://thomastomanec.cz/" className="hover:underline">thomastomanec.cz</a>. All Rights Reserved.
-          </span>
-          <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-            <li>
-              <a href="#" className="hover:underline me-4 md:me-6">Home</a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">Contact</a>
-            </li>
-          </ul>
+  return (
+    <footer className="bg-midnight-gray font shadow py-20">
+      <div className="flex flex-col container gap-8 mx-auto w-[50%]">
+        <h3 className="font-bold text-2xl text-white">Contact</h3>
+        <div className=" flex flex-col gap-2 text-neutral-400">
+          <p>Junior developer focused on creating and managing websites, e-shops, and various applications.
+            Skilled in a wide range of technologies, including both front-end and back-end development.</p>
+          <div className="flex gap-2 items-center font-bold">
+            <HiOutlineMail />
+            <p>tomasttomanec@gmail.com</p>
+          </div>
         </div>
-      </footer>
-    );
-  };
-  
-  export default Footer;
-  
+        <div className="flex gap-3 text-white text-lg">
+          <a
+            href="https://www.instagram.com/thomastomanec/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram size={24} />
+          </a>
+          <a
+            href="https://www.instagram.com/thomastomanec/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaXTwitter size={24} />
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
