@@ -9,19 +9,14 @@ import { LoginButton } from "@/components/auth/login-button";
 
 const navLinks = [
     {
-        title: "Domov",
+        title: "Home",
         path: "/",
-        key: "Domov", 
+        key: "Home",
     },
     {
-        title: "Kontakt",
-        path: "#Kontakt",
-        key: "Kontakt", 
-    },
-    {
-        title: "Služby",
-        path: "/sluzby",
-        key: "Sluzby",
+        title: "Blog",
+        path: "/page/blog",
+        key: "Blog",
     },
     {
         title: "Login",
