@@ -67,7 +67,7 @@ export const ResetForm = () => {
                                 <FormControl>
                                     <Input 
                                     {...field}
-                                    placeholder="john.doe@example.com"
+                                    placeholder="tomasttomanec@example.com"
                                     type="email"/>
                                 </FormControl>
                                 <div className="text-red-600">
@@ -81,8 +81,10 @@ export const ResetForm = () => {
                     <Button
                     disabled={isPedding}
                     type="submit"
-                    className="w-full bg-black text-white">
+                    className="w-full bg-black">
+                        <a className="font-extrabold text-lg bg-gradient-to-t to-sky-200 from-sky-500 text-transparent bg-clip-text">
                         Sent reset email
+                        </a>
                     </Button>
                 </form>
             </Form>

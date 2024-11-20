@@ -112,8 +112,10 @@ export const LoginForm = () => {
                     <Button
                     disabled={isPedding}
                     type="submit"
-                    className="w-full bg-black text-white">
-                        Login
+                    className="w-full bg-black  ">
+                        <a className="font-extrabold  text-xl bg-gradient-to-t to-sky-200 from-sky-500 text-transparent bg-clip-text">
+                            Login
+                        </a>
                     </Button>
                 </form>
             </Form>

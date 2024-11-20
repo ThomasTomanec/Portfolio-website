@@ -10,7 +10,7 @@ const HeroSection = () => {
             <div className="flex flex-col-reverse items-center lg:flex-row lg:justify-between">
                 <div className="lg:w-[700px] text-center lg:text-start">
                     <h1 className="text-white mc-4 text-2xl lg:text-6xl font-medium">Tomas Tomanec.</h1>
-                    <h2 className="text-blue-300 mc-2 text-lg lg:text-2xl uppercase pt-1">Designer + Developer</h2>
+                    <h2 className="bg-gradient-to-b from-cyan-300 to-sky-600 text-transparent bg-clip-text mc-2 text-lg lg:text-2xl uppercase pt-1">Designer + Developer</h2>
                     <p className="text-white text-lg mb-6 lg:text-xl pt-2 lg:pt-8">Hi, I&rsquo;m Thomas Tomanec, an IT student crafting websites
                         and smaller intriguing projects. Explore my portfolio
                         showcasing my passion for programming and design.

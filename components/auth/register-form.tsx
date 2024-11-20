@@ -110,8 +110,10 @@ export const RegisterForm = () => {
                     <Button
                     disabled={isPedding}
                     type="submit"
-                    className="w-full bg-black text-white">
+                    className="w-full bg-black">
+                        <a className="font-extrabold text-lg bg-gradient-to-t to-sky-200 from-sky-500 text-transparent bg-clip-text">
                         Create an account
+                        </a>
                     </Button>
                 </form>
             </Form>

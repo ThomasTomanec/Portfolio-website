@@ -25,30 +25,29 @@ export const CardWrapper = ({
     showSocial
 }: CardWrapperProps) => {
     return (
-        <Card className="w-[600px] shadow-md bg-white text-black ">
-             <CardHeader>
+        <Card className="card-content w-[400px] shadow-[rgba(135,_206,_235,_0.4)_0px_30px_90px] bg-neutral-200 text-black  ">
+            <CardHeader>
                 <Header label={headerLabel} />
             </CardHeader>
-            <div className="flex">
-            <div className="w-[400px]">
-            <CardContent>
-                { children }
-            </CardContent>
-            </div>
-            <div className="flex ">
-            {showSocial && (
-                <CardFooter>
-                    <Social />
-                </CardFooter>
-            )}
-            </div>
+            <div className="flex flex-col">
+                <CardContent>
+                    {children}
+                </CardContent>
+
+                <div>
+                    {showSocial && (
+                        <CardFooter className="card-footer-social flex">
+                            <Social />
+                        </CardFooter>
+                    )}
+                </div>
             </div>
             <CardFooter>
                 <BackButton
-                label={backButtonLabel}
-                href={backButtonHref}/>
+                    label={backButtonLabel}
+                    href={backButtonHref} />
             </CardFooter>
-          
+
         </Card >
     )
 }
