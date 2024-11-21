@@ -1,12 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/app/globals.css'
-import { SessionProvider } from "next-auth/react"
 import { auth } from "@/auth"
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import Experiences from "@/components/Experiences";
-import Repositories from "@/components/repositories/Repositories-cards";
 import Footer from "@/components/Footer";
 import React from "react";
 
@@ -29,7 +25,7 @@ export default async function RootLayout({
         <Navbar/>
       </header>
       <main className="mainSite flex min-h-screen flex-col bg-midnight-black">
-
+          {children}
       </main>
       <footer>
         <Footer/>
