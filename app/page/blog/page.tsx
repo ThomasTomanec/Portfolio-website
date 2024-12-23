@@ -2,7 +2,7 @@ import React from 'react';
 
 const Page = () => {
     return (
-       <p>ahoj</p>
+       <p className="text-white">ahdsdsasdasdsasadsadsdoj</p>
     );
 };
 
