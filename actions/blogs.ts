@@ -1,8 +1,7 @@
 "use server";
 
 import { db } from "@/lib/db";
-import {revalidate} from "@/app/(protected)/dashboard/page";
-import {revalidatePath} from "next/cache";
+import { revalidatePath } from "next/cache";
 
 export async function createBlog(formData: FormData) {
     await db.blog.create({
@@ -10,32 +9,37 @@ export async function createBlog(formData: FormData) {
             name: formData.get("title") as string,
             content: formData.get("content") as string,
         }
-    })
-
-    revalidatePath("/dashboard/blogs")
-}
-
-export async function editBlog(formData: FormData, id: string){
-    await db.blog.update({
-        where: { id },
-        data: {
-            name: formData.get("title") as string,
-            content: formData.get("content") as string
-
-        },
     });
+
+    revalidatePath("/dashboard/blogs");
 }
 
 export async function deleteBlog(id: string) {
     try {
-        // Smazání blogu podle ID
         await db.blog.delete({
             where: { id },
         });
 
-        // Revalidace cesty pro aktualizaci stránky
         revalidatePath("/dashboard/blogs");
     } catch (error) {
+        console.error("Error deleting blog:", error);
         throw new Error("Chyba při mazání blogu.");
+    }
+}
+
+export async function editBlog(formData: FormData, id: string) {
+    try {
+        await db.blog.update({
+            where: { id },
+            data: {
+                name: formData.get("title") as string,
+                content: formData.get("content") as string,
+            },
+        });
+
+        revalidatePath("/dashboard/blogs");
+    } catch (error) {
+        console.error("Error editing blog:", error);
+        throw new Error("Chyba při úpravě blogu.");
     }
 }

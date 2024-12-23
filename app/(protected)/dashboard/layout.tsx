@@ -4,7 +4,6 @@
 // Import necessary components and hooks
 import Sidenav from "@/app/(protected)/_components/Sidenav";
 import { useEffect, useState } from "react";
-import Header from "@/app/(protected)/_components/Header";
 
 // Define the RootLayout component
 export default function RootLayout({
