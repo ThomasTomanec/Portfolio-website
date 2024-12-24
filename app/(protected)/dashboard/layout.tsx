@@ -4,7 +4,6 @@
 // Import necessary components and hooks
 import Sidenav from "@/app/(protected)/_components/Sidenav";
 import { useEffect, useState } from "react";
-import Header from "@/app/(protected)/_components/Header";
 
 // Define the RootLayout component
 export default function RootLayout({
@@ -34,21 +33,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="flex h-screen bg-gray-200">
-          <div>
+        <div className="flex h-screen bg-white rounded">
+          <div className="relative z-10">
             {/* Render the Sidenav component */}
             <Sidenav
               sidebarOpen={sidebarOpen}
               setSidebarOpen={setSidebarOpen}
             />
           </div>
-          <div className="relative flex flex-col flex-1 lg:overflow-y-auto lg:overflow-x-hidden">
+          <div className="relative flex flex-col flex-1 lg:overflow-y-auto lg:overflow-x-hidden rounded-xl bg-white z-50 right-5">
             {/* Render the Header component if in mobile mode */}
-            
-              <Header
-                setSidebarOpen={setSidebarOpen}
-                className="sticky top-0 bg-white border-b border-slate-200 z-30"
-              />
             {/* Render the main content */}
             <main>{children}</main>
           </div>

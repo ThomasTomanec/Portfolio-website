@@ -7,7 +7,7 @@ import { TypeAnimation } from 'react-type-animation';
 const HeroSection = () => {
     return (
         <section>
-            <div className="flex flex-col-reverse items-center lg:flex-row lg:justify-between">
+            <div className="container flex flex-col-reverse items-center lg:flex-row lg:justify-between">
                 <div className="lg:w-[700px] text-center lg:text-start">
                     <h1 className="text-white mc-4 text-2xl lg:text-6xl font-medium">Tomas Tomanec.</h1>
                     <h2 className="bg-gradient-to-b from-cyan-300 to-sky-600 text-transparent bg-clip-text mc-2 text-lg lg:text-2xl uppercase pt-1">Designer + Developer</h2>

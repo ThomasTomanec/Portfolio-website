@@ -32,8 +32,8 @@ export const UserButton = () => {
                     </AvatarFallback>
                 </Avatar>
                 <div className="text-left pl-3 pr-6">
-                    <p className="text-sm text-black">{user?.name}</p>
-                    <p className="text-xs lowercase text-black">{user?.role}</p>
+                    <p className="text-xs text-white">{user?.email}</p>
+                    <p className="text-xs lowercase text-white">{user?.role}</p>
                 </div>
             </div>
         </div>
