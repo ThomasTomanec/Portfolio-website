@@ -1,48 +1,68 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import React, { useState, useEffect } from "react";
+import { useRouter, useParams } from "next/navigation";
 import { ImFileText2 } from "react-icons/im";
-import Link from 'next/link';
-import { createBlog } from "@/actions/blogs";
+import Link from "next/link";
+import { getBlogById, updateBlog } from "@/actions/blogs"; // Import serverových akcí
 
-export default function CreateBlog() {
+export default function EditBlog() {
     const [name, setName] = useState('');
     const [content, setContent] = useState('');
-    const [isMounted, setIsMounted] = useState(false);
+    const [createDate, setCreateDate] = useState('');
+    const [loading, setLoading] = useState(true);
     const router = useRouter();
+    const params = useParams();
+    const { id } = params as { id: string };
 
     useEffect(() => {
-        setIsMounted(true);
-    }, []);
+        const fetchBlog = async () => {
+            try {
+                const blog = await getBlogById(id); // Získání blogu
+                setName(blog.name || '');
+                setContent(blog.content || '');
+                setCreateDate(blog.createDate ? new Date(blog.createDate).toLocaleDateString("cs-CZ") : '');
+            } catch (error) {
+                console.error("Chyba při načítání blogu:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        if (id) {
+            fetchBlog();
+        }
+    }, [id]);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const formData = new FormData(event.currentTarget);
-
         try {
-            // Zavolání serverové akce
-            await createBlog(formData);
+            // Volání serverové akce pro aktualizaci blogu
+            await updateBlog(id, name, content);
 
-            // Po úspěšném vytvoření přesměrování a refresh stránky
+            // Po úspěšné úpravě zavoláme fetchBlogs pro okamžité načtení nových dat
             router.push('/dashboard/blog');
             router.refresh(); // Obnovíme data na stránce
         } catch (error) {
-            console.error('Chyba při vytváření blogu:', error);
-            alert('Něco se pokazilo při ukládání blogu. Zkuste to znovu.');
+            console.error("Chyba při ukládání blogu:", error);
         }
     };
+
+    if (loading) {
+        return <div>Načítám...</div>;
+    }
 
     return (
         <div className="min-h-screen py-4 pr-8 pl-4 ml-3">
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold mb-4">Přidat nový blog</h1>
+                <h1 className="text-2xl font-bold mb-4">Upravit blog</h1>
                 <div className="flex gap-3">
                     <button
                         form="blog-form"
                         type="submit"
-                        className="p-2 bg-blue-500 text-white rounded-lg flex gap-2 items-center">
+                        className="p-2 bg-blue-500 text-white rounded-lg flex gap-2 items-center"
+                    >
                         Uložit
                         <ImFileText2 />
                     </button>
@@ -62,9 +82,8 @@ export default function CreateBlog() {
                             <input
                                 type="text"
                                 id="id"
-                                onChange={(e) => setName(e.target.value)}
+                                value={id}
                                 className="p-2 border border-gray-400 bg-gray-300  rounded-lg w-[300px]"
-                                required
                                 readOnly
                             />
                         </div>
@@ -73,9 +92,8 @@ export default function CreateBlog() {
                             <input
                                 type="text"
                                 id="CreateAt"
-                                onChange={(e) => setName(e.target.value)}
-                                className="p-2 border border-gray-400 bg-gray-300 rounded-lg w-[300px]"
-                                required
+                                value={createDate}
+                                className="p-2 border border-gray-400 bg-gray-300  rounded-lg w-[300px]"
                                 readOnly
                             />
                         </div>
@@ -89,6 +107,7 @@ export default function CreateBlog() {
                             <input
                                 type="text"
                                 name="title"
+                                value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 className="p-2 border border-gray-300 rounded-lg w-full"
                                 required
@@ -99,6 +118,7 @@ export default function CreateBlog() {
                             <textarea
                                 name="content"
                                 rows={10}
+                                value={content}
                                 onChange={(e) => setContent(e.target.value)}
                                 className="p-2 border border-gray-300 rounded-lg w-full"
                                 required
@@ -110,3 +130,4 @@ export default function CreateBlog() {
         </div>
     );
 }
+

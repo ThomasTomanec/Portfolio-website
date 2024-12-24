@@ -19,17 +19,6 @@ const Dashboard = async () => {
                             <h1>Hlavní stránka</h1>
                         </div>
                     </div>
-                    <div className="mt-8">
-                        <ul>
-                            {blogs.map((blog) => (
-                                <li key={blog.id} className="p-2 border-b">
-                                    {blog.id}
-                                    {blog.name}
-                                    {blog.content}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
                 </div>
             </div>
         </>
