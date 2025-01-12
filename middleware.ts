@@ -1,8 +1,5 @@
 import NextAuth from "next-auth";
 import authConfig from "@/auth.config";
-import { useCurrentUser } from "@/hooks/use-current-user";
-
-
 import {
     DEFAULT_LOGIN_REDIRECT,
     apiAuthPrefix,
@@ -12,7 +9,8 @@ import {
 
 const { auth } = NextAuth(authConfig);
 
-
+// TypeScript anotace pro vypnutí typové kontroly pro parametr req
+// @ts-ignore
 export default auth((req: any) => {
     const { nextUrl } = req;
     const isLoggedIn = !!req.auth;
@@ -20,7 +18,6 @@ export default auth((req: any) => {
     const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
     const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
     const isAuthRoute = authRoutes.includes(nextUrl.pathname);
-
 
     if (isApiAuthRoute) {
         return null;
@@ -35,12 +32,8 @@ export default auth((req: any) => {
     if (!isLoggedIn && !isPublicRoute) {
         return Response.redirect(new URL("/auth/login", nextUrl));
     }
-
     return null;
 })
-
-
-
 
 export const config = {
     matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
