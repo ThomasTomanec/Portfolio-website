@@ -11,16 +11,14 @@ import {db} from "@/lib/db";
 const TRACKING_ID = "G-ZDYYFQJF9N";
 ReactGA.initialize(TRACKING_ID);
 
-ReactGA.send("pageview");
-ReactGA . send ( {  hitType : "pageview" ,  page : "/" ,  title : "Home"  } ) ;
-
-
 interface Props {
   searchParams: { customUsername?: string };
 }
 
   export default async function ProjectsPage({ searchParams: { customUsername } }: Props): Promise<JSX.Element> {
       const blogs = await db.blog.findMany();
+      ReactGA.send("pageview");
+
     return (
       <body>
         <header className="relative z-20">
@@ -46,4 +44,3 @@ interface Props {
       </body>
     );
   }
-  
