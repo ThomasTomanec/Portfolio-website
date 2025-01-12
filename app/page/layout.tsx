@@ -21,7 +21,7 @@ export default async function RootLayout({
   const session = await auth();
   return (
       <body>
-      <header>
+      <header className="relative z-20">
         <Navbar/>
       </header>
       <main className="mainSite flex min-h-screen flex-col bg-midnight-black">

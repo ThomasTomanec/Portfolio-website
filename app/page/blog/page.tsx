@@ -6,6 +6,7 @@ export default async function blog() {
     const blogs = await db.blog.findMany();
 
     return (
+        <div className="relative mt-[-100px] pt-[100px] z-10 bg-midnight-black">
         <div className="container flex flex-col flex-wrap content-center">
             <div className="w-[700px] py-10">
                 <h3 className="text-[24px] bg-gradient-to-b from-cyan-300 to-sky-600 text-transparent bg-clip-text">Blog</h3>
@@ -14,6 +15,7 @@ export default async function blog() {
             </div>
 
             <Blogs blogs={blogs}/>
+        </div>
         </div>
     );
 }

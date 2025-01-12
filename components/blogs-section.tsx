@@ -1,6 +1,8 @@
 "use client";
 import React from 'react';
 import { FiArrowUpRight } from "react-icons/fi";
+import Link from 'next/link';
+
 
 
 type Blog = {
@@ -16,19 +18,22 @@ type Props = {
 
 export default function BlogsSection({ blogs }: Props) {
     return (
-        <div className="container ">
-            <div className=" py-10 flex justify-between items-end">
+        <div className="bg-cover bg-no-repeat bg-[url('/images/bg.svg')] h-[300px] flex items-center">
+        <div className="container">
+            <div className=" py-10 flex justify-between">
                 <div className="w-[700px]">
                 <h3 className="text-[24px] bg-gradient-to-b from-cyan-300 to-sky-600 text-transparent bg-clip-text">Blog</h3>
-                <h2 className="text-[42px] text-black font-medium">Here, I write my blogs.</h2>
+                <h2 className="text-[42px] text-white font-medium">Here, I write my blogs.</h2>
                 <p className="text-[14px] text-gray-400">On my portfolio, I write blogs where I share my experiences,
                     ideas, and tech news. Each post showcases my skills in writing, programming, and design.</p>
                 </div>
                 <div>
-                    <button className="flex items-center gap-2 px-5 py-2 rounded-3xl bg-gradient-to-b from-cyan-300 to-sky-600">
-                        <p>go to blog</p>
+                    <Link href="/page/blog">
+                    <button className="flex mt-36 items-center gap-2 pl-4 pr-2 py-2 rounded-3xl bg-gradient-to-b from-cyan-300 to-sky-600">
+                        <p>Go to blog page</p>
                         <FiArrowUpRight size={32} className="p-[6px] text-white bg-black rounded-full "/>
                     </button>
+                    </Link>
                 </div>
             </div>
 
@@ -41,6 +46,7 @@ export default function BlogsSection({ blogs }: Props) {
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     );
 }
