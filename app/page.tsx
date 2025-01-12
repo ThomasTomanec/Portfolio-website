@@ -8,7 +8,7 @@ import BlogsSection from "@/components/blogs-section";
 import ReactGA from "react-ga4";
 import {db} from "@/lib/db";
 
-const TRACKING_ID = "";
+const TRACKING_ID = "G-ZDYYFQJF9N";
 ReactGA.initialize(TRACKING_ID);
 
 ReactGA.send("pageview");
