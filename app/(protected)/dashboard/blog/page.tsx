@@ -7,8 +7,6 @@ import { revalidatePath } from "next/cache";
 export default async function BlogPage() {
     const blogs = await db.blog.findMany();
 
-
-
     const handleDelete = async (id: string) => {
         'use server';
         try {

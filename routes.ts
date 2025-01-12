@@ -1,3 +1,7 @@
+import BlogPage from "@/app/(protected)/dashboard/blog/page";
+import CreateBlog from "@/app/(protected)/dashboard/blog/create-blog/page";
+import EditBlog from "@/app/(protected)/dashboard/blog/edit-blog/[id]/page";
+
 /**
  * An array of routes that are accesible to the public
  * these routes do not require authentication
@@ -13,9 +17,9 @@ export const publicRoutes = [
  * these routes will redirect logged in users to /settings
  * @type {string[]}
  */
+
 export const authRoutes = [
     "/auth/login",
-    "/auth/register",
     "/auth/error",
     "/auth/reset",
     "/auth/new-password"

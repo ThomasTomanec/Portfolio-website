@@ -2,7 +2,11 @@ import React from "react";
 import {IoLogoJavascript, IoLogoCss3, IoLogoPython, IoLogoHtml5} from 'react-icons/io5';
 import { FaPhp } from 'react-icons/fa6';
 import { FaGitAlt } from "react-icons/fa";
-import { DiVisualstudio } from "react-icons/di";
+import { FaDocker } from "react-icons/fa";
+import { SiTailwindcss } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
+
+
 
 
 
@@ -31,20 +35,20 @@ const Experiences = () => {
                     <h3 text-center>PHP</h3>
                 </div>
                 <div className="p-2 flex flex-col items-center">
-                    <IoLogoPython size={70} />
-                    <h3 text-center>Python</h3>
+                    <FaDocker size={70} />
+                    <h3 text-center>Docker</h3>
                 </div>
                 <div className="p-2 flex flex-col items-center">
                     <IoLogoHtml5 size={70} />
                     <h3 text-center>HTML5</h3>
                 </div>
                 <div className="p-2 flex flex-col items-center">
-                    <FaGitAlt size={70} />
-                    <h3 text-center>GitHub</h3>
+                    <SiMysql size={70} />
+                    <h3 text-center>MySQL</h3>
                 </div>
                 <div className="p-2 flex flex-col items-center">
-                    <DiVisualstudio size={70} />
-                    <h3 text-center>Visual Studio</h3>
+                    <SiTailwindcss size={70} />
+                    <h3 text-center>Tailwind</h3>
                 </div>
                 </div>
             </div>

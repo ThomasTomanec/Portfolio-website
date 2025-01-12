@@ -6,7 +6,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 const HeroSection = () => {
     return (
-        <section>
+        <section className="bg-cover bg-no-repeat bg-[url('/images/dark-black-blue.jpg')] py-20 pt-[150px]">
             <div className="container flex flex-col-reverse items-center lg:flex-row lg:justify-between">
                 <div className="lg:w-[700px] text-center lg:text-start">
                     <h1 className="text-white mc-4 text-2xl lg:text-6xl font-medium">Tomas Tomanec.</h1>

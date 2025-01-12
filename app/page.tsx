@@ -5,29 +5,36 @@ import Experiences from "@/components/Experiences";
 import Footer from "@/components/Footer";
 import Repositories from "@/components/repositories/Repositories-cards";
 import BlogsSection from "@/components/blogs-section";
+import ReactGA from "react-ga4";
 import {db} from "@/lib/db";
+
+const TRACKING_ID = "G-ZDYYFQJF9N";
+ReactGA.initialize(TRACKING_ID);
+
+ReactGA.send("pageview");
+ReactGA . send ( {  hitType : "pageview" ,  page : "/" ,  title : "Home"  } ) ;
+
 
 interface Props {
   searchParams: { customUsername?: string };
 }
 
-
   export default async function ProjectsPage({ searchParams: { customUsername } }: Props): Promise<JSX.Element> {
       const blogs = await db.blog.findMany();
     return (
       <body>
-        <header>
-          <Navbar />
+        <header className="relative z-20">
+          <Navbar  />
         </header>
-        <main className="mainSite flex min-h-screen flex-col bg-midnight-black">
-          <div className="components py-4">
-            <div className="componentHeroSections col-span-1 ms:py-10 lg:pt-10 pt-5">
+        <main className="mainSite relative z-10 mt-[-100px] flex min-h-screen flex-col bg-midnight-black">
+          <div className="components">
+            <div className="componentHeroSections col-span-1">
               <HeroSection />
             </div>
-            <div className="componentExperiences col-span-1 md:py-10 pt-10 lg:p-xl">
+            <div className="componentExperiences col-span-1 md:py-20 pt-20">
               <Experiences />
             </div>
-              <div className="bg-white w-full pb-10">
+              <div className="bg-white w-full">
                   <BlogsSection blogs={blogs}/>
               </div>
             <Repositories />
