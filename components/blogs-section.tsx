@@ -18,7 +18,7 @@ type Props = {
 
 export default function BlogsSection({ blogs }: Props) {
     return (
-        <div className="bg-cover bg-no-repeat bg-[url('/images/bg.svg')] h-[300px] flex items-center">
+        <div className="bg-cover bg-no-repeat bg-[url('/images/bg.svg')] py-[50px] flex items-center">
         <div className="container">
             <div className=" py-10 flex justify-between">
                 <div className="w-[700px]">
@@ -37,10 +37,10 @@ export default function BlogsSection({ blogs }: Props) {
                 </div>
             </div>
 
-            <div className="flex gap-10 justify-between">
+            <div className="flex gap-10 justify-start">
                 {blogs.map((blog) => (
                     <div className="card w-[450px] flex flex-col gap-[5px]" key={blog.id}>
-                        <h3 className="text-black text-[18px] font-semibold">{blog.name}</h3>
+                        <h3 className="text-white text-[18px] font-semibold">{blog.name}</h3>
                         <p className="text-[14px] bg-gradient-to-b from-cyan-300 to-sky-600 text-transparent bg-clip-text">{new Date(blog.createDate).toLocaleDateString('cs-CZ')}</p>
                         <p className="text-gray-400 text-[14px]">{blog.content}</p>
                     </div>

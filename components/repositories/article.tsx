@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MarkGithubIcon, StarIcon, GitBranchIcon } from '@primer/octicons-react';
+import {sendGAEvent} from "@next/third-parties/google";
 
 interface LanguageCircleProps {
   language: string;
@@ -39,7 +40,7 @@ export const Article: React.FC<ArticleProps> = ({ project }) => {
   return (
     <article className="p-2 md:p-4 ">
       {appLink && (
-        <Link href={appLink} passHref>
+        <Link  href={appLink} passHref>
           <h2 className="z-20 text-xl font-medium duration-1000 lg:text-2xl text-zinc-200 font-display cursor-pointer">
             <span className="font-semibold text-white bg-clip-text">
               <div className="flex justify-between gap-2 items-center ">
