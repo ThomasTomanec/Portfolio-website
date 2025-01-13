@@ -8,9 +8,9 @@ import { HiOutlineMailOpen } from "react-icons/hi";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-midnight-gray font shadow pt-20 pb-5">
+    <footer className="bg-cover bg-bottom bg-no-repeat bg-[url('/images/footer-bg.png')] font shadow pt-20 pb-5">
       <div className="container flex flex-col container gap-8 mx-auto">
-        <div className="flex gap-3 text-white text-lg">
+        <div className="flex flex-col lg:flex-row gap-3 text-white text-lg">
           <div>
             <a
                 href="https://www.instagram.com/thomastomanec/"
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
-        <div className=" flex flex-col gap-2 text-neutral-400 w-[500px]">
+        <div className=" flex flex-col gap-2 text-neutral-400 lg:w-[500px]">
           <p>Junior developer focused on creating and managing websites, e-shops, and various applications.
             Skilled in a wide range of technologies, including both front-end and back-end development.</p>
 

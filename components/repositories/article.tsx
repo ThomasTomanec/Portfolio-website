@@ -51,15 +51,15 @@ export const Article: React.FC<ArticleProps> = ({ project }) => {
                 </span>
                 <span className="text-xs text-white flex items-center gap-3 pb-2">
                   <span className="flex" title="Total stars.">
-                    <div className="pr-2 pl-2 bg-zinc-900 items-center py-1 px-3 rounded-2xl m-1">
+                    <div className="pr-2 pl-2 bg-sky-500 bg-opacity-10 items-center py-1 px-3 rounded-2xl m-1">
                       <StarIcon className="w-4 h-4" />{" "}
                       {Intl.NumberFormat("en-US", { notation: "compact" }).format(project.stargazers_count)}
                     </div>
-                    <div className="pr-2 pl-2 bg-zinc-900 items-center py-1 px-3 rounded-2xl m-1">
+                    <div className="pr-2 pl-2 bg-sky-500 bg-opacity-10 items-center py-1 px-3 rounded-2xl m-1">
                       <GitBranchIcon className="w-4 h-4" />{" "}
                       {Intl.NumberFormat("en-US", { notation: "compact" }).format(project.forks_count)}
                     </div>
-                    <div className="pr-2 pl-2 flex bg-zinc-900 items-center py-1 px-3 rounded-2xl m-1">
+                    <div className="pr-2 pl-2 flex bg-sky-500 bg-opacity-10 items-center py-1 px-3 rounded-2xl m-1">
                       <LanguageCircle language={project.language || 'Unknown'} colors={colors} />
                       <span className="ml-2">{project.language}</span>
                     </div>

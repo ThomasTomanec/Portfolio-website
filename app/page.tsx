@@ -27,7 +27,7 @@ interface Props {
         <header className="relative z-20">
           <Navbar  />
         </header>
-        <main className="mainSite relative z-10 mt-[-100px] flex min-h-screen flex-col bg-midnight-black">
+        <main className="mainSite relative z-10 mt-[-230px] sm:mt-[-250px] lg:mt-[-100px] flex min-h-screen flex-col bg-midnight-black">
           <div className="components">
             <div className="componentHeroSections col-span-1">
               <HeroSection />
@@ -38,6 +38,7 @@ interface Props {
               <div className="bg-white w-full">
                   <BlogsSection blogs={blogs}/>
               </div>
+              <Repositories />
               <GoogleAnalytics gaId="G-ZDYYFQJF9N" />
           </div>
         </main>
