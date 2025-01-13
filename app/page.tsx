@@ -7,9 +7,11 @@ import Repositories from "@/components/repositories/Repositories-cards";
 import BlogsSection from "@/components/blogs-section";
 import ReactGA from "react-ga4";
 import {db} from "@/lib/db";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
-const TRACKING_ID = "G-ZDYYFQJF9N";
-ReactGA.initialize(TRACKING_ID);
+
+ReactGA.initialize("G-ZDYYFQJF9N");
+ReactGA.send("pageview");
 
 interface Props {
   searchParams: { customUsername?: string };
@@ -17,6 +19,7 @@ interface Props {
 
   export default async function ProjectsPage({ searchParams: { customUsername } }: Props): Promise<JSX.Element> {
       const blogs = await db.blog.findMany();
+      ReactGA.initialize("G-ZDYYFQJF9N");
       ReactGA.send("pageview");
 
     return (
@@ -35,7 +38,7 @@ interface Props {
               <div className="bg-white w-full">
                   <BlogsSection blogs={blogs}/>
               </div>
-            <Repositories />
+              <GoogleAnalytics gaId="G-ZDYYFQJF9N" />
           </div>
         </main>
         <footer>
