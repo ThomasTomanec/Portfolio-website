@@ -1,21 +1,24 @@
 import React from 'react';
 import Blogs from "@/components/blogs";
 import { db } from '@/lib/db';
+import HeroSectionBlogs from "@/components/HeroSectionBlogs";
 
 export default async function blog() {
     const blogs = await db.blog.findMany();
 
     return (
-        <div className="relative mt-[-100px] pt-[100px] z-10 bg-midnight-black">
-        <div className="container flex flex-col flex-wrap content-center">
-            <div className="w-[700px] py-10">
-                <h3 className="text-[24px] bg-gradient-to-b from-cyan-300 to-sky-600 text-transparent bg-clip-text">Blog</h3>
-                <h2 className="text-[42px] text-white font-medium">Here, I write my blogs.</h2>
-                <p className="text-[14px] text-gray-400">On my portfolio, I write blogs where I share my experiences, ideas, and tech news. Each post showcases my skills in writing, programming, and design.</p>
+        <main
+            className="mainSite relative z-10 mt-[-230px] sm:mt-[-250px] lg:mt-[-100px] flex min-h-screen flex-col bg-midnight-black">
+            <div className="components">
+                <div className="componentHeroSections col-span-1">
+                    <div>
+                        <HeroSectionBlogs/>
+                    </div>
+                    <div>
+                        <Blogs blogs={blogs}/>
+                    </div>
+                </div>
             </div>
-
-            <Blogs blogs={blogs}/>
-        </div>
-        </div>
-    );
-}
+        </main>
+            );
+            }

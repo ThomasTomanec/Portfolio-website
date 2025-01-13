@@ -116,7 +116,7 @@ const Repos = async () => {
                       <div className="grid md:grid-cols-1 gap-4">
                         {[heroes[1], heroes[3]].map((project: Repository | null) => (
                           !project ? null : (
-                            <div key={project.name} className="w-full h-full">
+                            <div key={project.name} className="w-full h-full ">
                               <Card>
                                 <Article project={project} />
                               </Card>

@@ -47,7 +47,7 @@ export default function Sidenav({sidebarOpen, setSidebarOpen}: any) {
                                         className="flex items-center lg:p-2 text-base text-white rounded-lg hover:bg-sky-500 hover:bg-opacity-10  font-light hover:font-semibold"
                                     >
                 <span
-                    className="flex items-center text-base text-white rounded-lg hover:bg-gray-100  hover:font-semibold">
+                    className="flex items-center text-base text-white rounded-lg hover:bg-sky-500 hover:bg-opacity-10  hover:font-semibold">
                 <LuHome className="w-[24px] h-[24px]"/>
                   <span
                       className={`${sidebarExpanded
@@ -79,30 +79,6 @@ export default function Sidenav({sidebarOpen, setSidebarOpen}: any) {
                       }ml-3 whitespace-nowrap `}
                   >
                     <p className="hidden lg:block">Write a Blog </p>
-                  </span>
-                </span>
-                                    </Link>
-                                </li>
-
-
-                                <li>
-                                    <Link
-                                        onClick={() => setSidebarOpen(false)}
-                                        href="/dashboard/Analytics"
-                                        className="flex items-center lg:p-2 text-base text-white rounded-lg hover:bg-sky-500 hover:bg-opacity-10  font-light hover:font-semibold"
-                                    >
-                <span
-                    className="flex items-center text-base text-white rounded-lg hover:bg-sky-500 hover:bg-opacity-10  hover:font-semibold">
-                <IoAnalyticsOutline className="w-[24px] h-[24px]"/>
-
-
-                  <span
-                      className={`${sidebarExpanded
-                          ? "lg:hidden opacity-0 ml-0"
-                          : "opacity-100 ml-3 block"
-                      }ml-3 whitespace-nowrap `}
-                  >
-                                        <p className="hidden lg:block">Analytics</p>
                   </span>
                 </span>
                                     </Link>

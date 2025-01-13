@@ -31,7 +31,7 @@ const Navbar = () => {
         <nav className="py-5">
             <div className="flex container flex-wrap items-center justify-between mx-auto">
                 <Link href={"/"} className="text-3xl text-white font-semibold">Tomanec</Link>
-                <div className="mobile-menu block md:hidden m">
+                <div className="mobile-menu block md:hidden">
                     {!navbarOpen ? (
                         <button
                             onClick={() => setNavbarOpen(true)}
